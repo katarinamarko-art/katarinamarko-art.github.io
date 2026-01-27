@@ -10,20 +10,26 @@ body {
   color: black;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header {
   position: fixed;
-  top: 40px;
-  left: 40px;
-  right: 40px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+
+  background: white;
+  z-index: 1000;
+}
+
+.header-inner {
+  height: 100%;
+  padding: 40px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background: white;
-  z-index: 1000;
 }
 
 .name {
@@ -31,7 +37,7 @@ header {
   font-weight: 600;
 }
 
-/* NAVIGATION */
+/* ================= NAV ================= */
 
 nav a {
   margin-left: 30px;
@@ -58,42 +64,45 @@ nav a.active::after {
   opacity: 1;
 }
 
-/* MAIN CONTENT */
+/* ================= MAIN OFFSET ================= */
 
 main {
-  padding-top: 180px;
+  padding-top: 180px; /* header height + breathing room */
 }
 
-/* WORKS */
+/* ================= WORKS ================= */
 
 .works {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.works img {
-  width: 100%;
-  display: block;
+.work-item {
+  position: relative;
   margin-bottom: 60px;
 }
 
-.works img {
-  margin-bottom: 20px;
-}
-
-.works video {
+.work-item img {
   width: 100%;
+  height: 70vh;
+  object-fit: cover;
   display: block;
 }
 
-.caption {
+/* CAPTION ON FIRST IMAGE */
+
+.work-item.first .caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
   margin-top: 10px;
-  margin-bottom: 60px;
+
   font-size: 12px;
   text-align: right;
 }
 
-/* TEXT SECTIONS */
+/* ================= TEXT SECTIONS ================= */
 
 .text {
   max-width: 600px;
