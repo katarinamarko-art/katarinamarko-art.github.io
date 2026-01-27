@@ -10,9 +10,11 @@ body {
   color: black;
 }
 
+/* HEADER */
+
 header {
   position: fixed;
-  top: 30px;
+  top: 40px;
   left: 40px;
   right: 40px;
 
@@ -28,6 +30,8 @@ header {
   font-size: 22px;
   font-weight: 600;
 }
+
+/* NAVIGATION */
 
 nav a {
   margin-left: 30px;
@@ -54,16 +58,20 @@ nav a.active::after {
   opacity: 1;
 }
 
+/* MAIN CONTENT */
+
 main {
-  padding-top: 160px;
+  padding-top: 180px;
 }
 
-.work {
+/* WORKS */
+
+.works {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.work img {
+.works img {
   width: 100%;
   display: block;
 }
@@ -74,7 +82,9 @@ main {
   text-align: right;
 }
 
-.text-section {
+/* TEXT SECTIONS */
+
+.text {
   max-width: 600px;
   margin: 200px auto;
   font-size: 14px;
