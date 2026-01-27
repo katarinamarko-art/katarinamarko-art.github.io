@@ -76,6 +76,11 @@ main {
   display: block;
 }
 
+.works video {
+  width: 100%;
+  display: block;
+}
+
 .caption {
   margin-top: 10px;
   font-size: 12px;
