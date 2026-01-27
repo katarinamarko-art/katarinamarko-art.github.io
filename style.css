@@ -62,7 +62,7 @@ nav a.active::after {
   opacity: 1;
 }
 
-/* ===== HEADER SPACER (PREVENTS CLIPPING) ===== */
+/* HEADER SPACER */
 
 .header-spacer {
   height: 120px;
@@ -76,16 +76,12 @@ nav a.active::after {
   padding-top: 60px;
 }
 
-/* EACH IMAGE ROW */
-
 .work-row {
   display: flex;
   align-items: flex-end;
   gap: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
-
-/* IMAGE RULE — SAME HEIGHT ALWAYS */
 
 .work-row img {
   height: 70vh;
@@ -95,19 +91,45 @@ nav a.active::after {
   display: block;
 }
 
-/* CAPTION ON FIRST IMAGE */
+/* CAPTION */
 
 .caption {
   font-size: 12px;
-  text-align: left;
   white-space: nowrap;
+}
+
+/* SIDE TEXT */
+
+.side-text {
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* ================= TEXT SECTIONS ================= */
 
-.text {
+.text-section {
   max-width: 600px;
   margin: 200px auto;
   font-size: 14px;
   line-height: 1.6;
+}
+
+.text-section h2 {
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+/* ================= FADE IN ================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
