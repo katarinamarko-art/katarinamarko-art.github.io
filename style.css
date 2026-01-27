@@ -5,21 +5,23 @@
 }
 
 body {
-  font-family: Helvetica, Axiforma, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   background: white;
   color: black;
 }
 
 header {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  width: calc(100% - 40px);
-  padding: 20px 30px;
+  top: 30px;
+  left: 40px;
+  right: 40px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background: white;
+  z-index: 1000;
 }
 
 .name {
@@ -53,7 +55,7 @@ nav a.active::after {
 }
 
 main {
-  padding-top: 140px; /* pushes content below fixed header */
+  padding-top: 160px;
 }
 
 .work {
