@@ -5,17 +5,17 @@
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Axiforma, sans-serif;
   background: white;
   color: black;
 }
 
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px 40px;
+  top: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@ header {
 }
 
 .name {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
 }
 
@@ -32,6 +32,24 @@ nav a {
   text-decoration: none;
   color: black;
   font-size: 14px;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: black;
+  opacity: 0;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  opacity: 1;
 }
 
 main {
@@ -52,4 +70,11 @@ main {
   margin-top: 10px;
   font-size: 12px;
   text-align: right;
+}
+
+.text-section {
+  max-width: 600px;
+  margin: 200px auto;
+  font-size: 14px;
+  line-height: 1.6;
 }
