@@ -76,6 +76,10 @@ main {
   display: block;
 }
 
+.works img {
+  margin-bottom: 20px;
+}
+
 .works video {
   width: 100%;
   display: block;
