@@ -17,8 +17,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 140px;
-
+  height: 120px;
   background: white;
   z-index: 1000;
 }
@@ -26,7 +25,6 @@ header {
 .header-inner {
   height: 100%;
   padding: 40px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,10 +62,10 @@ nav a.active::after {
   opacity: 1;
 }
 
-/* ================= MAIN OFFSET ================= */
+/* ===== HEADER SPACER (PREVENTS CLIPPING) ===== */
 
-main {
-  padding-top: 180px; /* header height + breathing room */
+.header-spacer {
+  height: 120px;
 }
 
 /* ================= WORKS ================= */
@@ -75,31 +73,34 @@ main {
 .works {
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 60px;
 }
 
-.work-item {
-  position: relative;
+/* EACH IMAGE ROW */
+
+.work-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
   margin-bottom: 60px;
 }
 
-.work-item img {
-  width: 100%;
+/* IMAGE RULE — SAME HEIGHT ALWAYS */
+
+.work-row img {
   height: 70vh;
+  width: auto;
+  max-width: 100%;
   object-fit: cover;
   display: block;
 }
 
 /* CAPTION ON FIRST IMAGE */
 
-.work-item.first .caption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: translateY(100%);
-  margin-top: 10px;
-
+.caption {
   font-size: 12px;
-  text-align: right;
+  text-align: left;
+  white-space: nowrap;
 }
 
 /* ================= TEXT SECTIONS ================= */
