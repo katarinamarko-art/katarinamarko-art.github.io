@@ -5,12 +5,12 @@
 }
 
 body {
-  font-family: Helvetica Neue, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   background: white;
   color: black;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header {
   position: fixed;
@@ -33,9 +33,11 @@ header {
 .name {
   font-size: 22px;
   font-weight: 600;
+  user-select: none;
+  cursor: default;
 }
 
-/* ================= NAV ================= */
+/* NAV */
 
 nav a {
   margin-left: 30px;
@@ -62,13 +64,13 @@ nav a.active::after {
   opacity: 1;
 }
 
-/* HEADER SPACER */
+/* SPACER */
 
 .header-spacer {
   height: 120px;
 }
 
-/* ================= WORKS ================= */
+/* WORKS */
 
 .works {
   max-width: 1200px;
@@ -88,14 +90,26 @@ nav a.active::after {
   width: auto;
   max-width: 100%;
   object-fit: cover;
-  display: block;
 }
 
 /* CAPTION */
 
 .caption {
   font-size: 12px;
-  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.caption .title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.caption .year {
+  font-style: italic;
+}
+
+.caption .type {
+  font-style: normal;
 }
 
 /* SIDE TEXT */
@@ -106,7 +120,7 @@ nav a.active::after {
   line-height: 1.6;
 }
 
-/* ================= TEXT SECTIONS ================= */
+/* TEXT PAGES */
 
 .text-section {
   max-width: 600px;
@@ -121,7 +135,7 @@ nav a.active::after {
   font-weight: normal;
 }
 
-/* ================= FADE IN ================= */
+/* FADE IN */
 
 .fade-in {
   opacity: 0;
