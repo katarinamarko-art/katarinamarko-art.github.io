@@ -82,9 +82,9 @@ body {
   margin-bottom: 140px;
 }
 
-/* MEDIA (IMAGES & VIDEOS) */
-.work img,
-.work video {
+/* MEDIA (IMAGES & VIDEOS) - only for normal works, not side captions */
+.work:not(.work-side-caption) img,
+.work:not(.work-side-caption) video {
   width: 100%;
   height: auto;
   display: block;
