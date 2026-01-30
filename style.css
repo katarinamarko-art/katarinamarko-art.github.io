@@ -82,7 +82,7 @@ nav a.active::after {
   display: flex;
   align-items: flex-end;
   gap: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 110px;
 }
 
 .work-row img {
@@ -115,7 +115,7 @@ nav a.active::after {
 /* SIDE TEXT */
 
 .side-text {
-  max-width: 300px;
+  max-width: 400px;
   font-size: 14px;
   line-height: 1.6;
 }
