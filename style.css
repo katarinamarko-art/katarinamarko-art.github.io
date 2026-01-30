@@ -30,7 +30,7 @@ body {
 }
 
 .logo {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800; /* strong font-style was invalid */
   letter-spacing: 0.08em;
   user-select: none;
