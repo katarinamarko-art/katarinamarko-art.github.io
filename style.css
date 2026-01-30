@@ -1,7 +1,7 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -10,147 +10,93 @@ body {
   color: black;
 }
 
-/* HEADER */
-
-header {
+/* HEADER — DO NOT TOUCH */
+.site-header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 120px;
   background: white;
-  z-index: 1000;
 }
 
 .header-inner {
-  height: 100%;
-  padding: 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 30px 40px;
 }
 
-.name {
-  font-size: 22px;
-  font-weight: 600;
+.logo {
+  font-size: 14px;
+  letter-spacing: 0.08em;
   user-select: none;
-  cursor: default;
 }
 
-/* NAV */
-
-nav a {
-  margin-left: 30px;
+.nav a {
+  margin-left: 24px;
   text-decoration: none;
   color: black;
-  font-size: 14px;
-  position: relative;
-  padding-bottom: 4px;
+  font-size: 13px;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: black;
-  opacity: 0;
-}
-
-nav a:hover::after,
-nav a.active::after {
-  opacity: 1;
-}
-
-/* SPACER */
-
-.header-spacer {
-  height: 120px;
-}
-
-/* WORKS */
-
+/* WORKS COLUMN — SAME SCALE AS BEFORE */
 .works {
-  max-width: 700px;
-  margin: 0 auto;
-  padding-top: 60px;
+  width: 700px;
+  margin: 160px auto;
 }
 
-.work-row {
+/* EACH BLOCK */
+.work {
+  margin-bottom: 140px;
+}
+
+/* MEDIA */
+.work img,
+.work video {
+  width: 100%;
+  display: block;
+}
+
+/* SPLIT BLOCK */
+.split {
   display: flex;
-  align-items: flex-end;
-  gap: 60px;
-  margin-bottom: 110px;
+  gap: 70px;
+  align-items: flex-start;
 }
 
-.work-row img {
-  height: 70vh;
-  width: auto;
-  max-width: 100%;
-  object-fit: cover;
+.split img {
+  width: 320px;
+}
+
+.split.reverse {
+  flex-direction: row-reverse;
+}
+
+/* TEXT BLOCK */
+.text {
+  width: 320px;
+}
+
+.text strong {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.text p {
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: none;
 }
 
 /* CAPTION */
-
 .caption {
-  font-size: 12px;
-  line-height: 1.4;
+  margin-top: 12px;
+  font-size: 13px;
 }
 
-.caption .title {
-  font-weight: bold;
+.caption strong {
   text-transform: uppercase;
 }
 
-.caption .year {
+.caption em {
   font-style: italic;
-}
-
-.caption .type {
-  font-style: normal;
-}
-
-/* SIDE TEXT */
-
-.side-text {
-  max-width: 400px;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* TEXT PAGES */
-
-.text-section {
-  max-width: 600px;
-  margin: 200px auto;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.text-section h2 {
-  font-size: 14px;
-  margin-bottom: 20px;
-  font-weight: normal;
-}
-
-/* FADE IN */
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.work-row video {
-  height: 70vh;
-  width: auto;
-  max-width: 100%;
-  object-fit: cover;
 }
