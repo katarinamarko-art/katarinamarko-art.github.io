@@ -25,7 +25,8 @@ body {
 }
 
 .logo {
-  font-size: 14px;
+  font-size: 18px;
+  font-style: strong
   letter-spacing: 0.08em;
   user-select: none;
 }
@@ -39,7 +40,7 @@ body {
 
 /* WORKS COLUMN — SAME SCALE AS BEFORE */
 .works {
-  width: 700px;
+  width: 1000px;
   margin: 160px auto;
 }
 
@@ -72,7 +73,7 @@ body {
 
 /* TEXT BLOCK */
 .text {
-  width: 320px;
+  width: 420px;
 }
 
 .text strong {
