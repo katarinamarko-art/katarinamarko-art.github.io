@@ -149,15 +149,17 @@ body {
 
 .work-side-caption img,
 .work-side-caption video {
-  width: auto;
-  max-width: 100%;
+  width: auto;       /* keep original size */
+  max-height: 540px; /* match horizontal media */
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .work-side-caption .caption {
   margin-top: 0;
   flex-shrink: 0;
   width: 200px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* RESPONSIVE */
