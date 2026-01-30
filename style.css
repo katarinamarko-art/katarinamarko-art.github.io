@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER — FIXED */
+/* HEADER */
 .site-header {
   position: fixed;
   top: 0;
@@ -30,7 +30,7 @@ body {
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: 0.08em;
   user-select: none;
@@ -47,7 +47,6 @@ body {
   transition: color 0.2s;
 }
 
-/* Underline for hover and active */
 .nav a::after {
   content: "";
   position: absolute;
@@ -64,27 +63,26 @@ body {
   width: 100%;
 }
 
-/* SPACER FOR FIXED HEADER */
+/* SPACER */
 .header-spacer {
-  height: 100px; /* matches header height */
+  height: 100px;
 }
 
 /* MAIN WORKS COLUMN */
 .works {
-  width: 1100px;
+  width: 1200px;
   max-width: 95%;
   margin: 0 auto 100px;
   padding-top: 60px;
 }
 
-/* EACH WORK BLOCK */
 .work {
   margin-bottom: 180px;
 }
 
-/* MEDIA (IMAGES & VIDEOS) - only for normal works, not side captions */
-.work:not(.work-side-caption) img,
-.work:not(.work-side-caption) video {
+/* MEDIA (horizontal only) */
+.work:not(.work-vertical-text) img,
+.work:not(.work-vertical-text) video {
   width: 100%;
   height: auto;
   display: block;
@@ -92,27 +90,28 @@ body {
   border-radius: 4px;
 }
 
-/* SPLIT BLOCK (IMAGE + TEXT) */
-.split {
+/* SPLIT BLOCK FOR VERTICAL IMAGES + TEXT */
+.work-vertical-text {
   display: flex;
-  gap: 40px; /* slightly smaller gap to fit */
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: stretch; /* match heights */
+  gap: 30px;
 }
 
-.split img {
-  width: 320px;  /* smaller image to fit next to text */
-  flex-shrink: 0;
-}
-
-.split.reverse {
+.work-vertical-text.reverse {
   flex-direction: row-reverse;
 }
 
-/* TEXT BLOCK */
-.text {
-  width: 320px; /* match split image width */
-  max-width: 100%;
+.work-vertical-text img {
+  height: 540px; /* matches horizontal image height (example) */
+  width: auto;   /* maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.work-vertical-text .text {
+  flex: 1;
+  max-width: 400px;
 }
 
 .text strong {
@@ -127,7 +126,7 @@ body {
   text-align: justify;
 }
 
-/* CAPTION */
+/* CAPTIONS (for horizontal works) */
 .caption {
   margin-top: 12px;
   font-size: 13px;
@@ -158,34 +157,27 @@ body {
   margin-top: 0;
   flex-shrink: 0;
   width: 200px;
-  font-size: 11px;
-}
-
-/* Responsive: on small screens, caption below media */
-@media (max-width: 700px) {
-  .work-side-caption {
-    flex-direction: column;
-  }
-
-  .work-side-caption .caption {
-    width: 100%;
-    margin-top: 12px;
-  }
+  font-size: 13px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .split {
+  .split,
+  .work-vertical-text,
+  .work-side-caption {
     flex-direction: column !important;
-    gap: 30px;
   }
 
-  .split img {
-    width: 100%;
+  .split img,
+  .work-vertical-text img {
+    width: 100% !important;
+    height: auto !important;
   }
 
-  .text {
-    width: 100%;
+  .text,
+  .work-side-caption .caption {
+    width: 100% !important;
+    max-width: 100%;
   }
 }
 
@@ -201,4 +193,3 @@ body {
     margin-right: 20px;
   }
 }
-
