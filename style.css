@@ -128,6 +128,18 @@ body {
   font-style: italic;
 }
 
+/* FADE IN */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* VERTICAL IMAGE + TEXT — EDGE ALIGNED */
 .work-vertical-text {
   display: grid;
