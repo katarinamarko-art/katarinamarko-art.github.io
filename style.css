@@ -128,39 +128,35 @@ body {
   font-style: italic;
 }
 
-/* VERTICAL IMAGE + TEXT — IMAGE CENTERED, TEXT OFFSET */
+/* VERTICAL IMAGE + TEXT — EDGE ALIGNED */
 .work-vertical-text {
-  position: relative;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: var(--reference-height) 1fr;
+  column-gap: 40px;
+  align-items: start;
 }
 
-/* media stays perfectly centered */
-.work-vertical-text .media-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-shrink: 0;
+/* reversed layout */
+.work-vertical-text.reverse {
+  grid-template-columns: 1fr var(--reference-height);
 }
 
+/* image column */
 .work-vertical-text img {
   height: var(--reference-height);
   width: auto;
   object-fit: contain;
+  justify-self: start;
 }
 
-/* text lives to the side, does not affect centering */
+/* reversed image stays aligned */
+.work-vertical-text.reverse img {
+  justify-self: end;
+}
+
+/* text */
 .work-vertical-text .text {
-  position: absolute;
-  top: 0;
-  left: calc(50% + var(--reference-height) / 2 + 40px);
   max-width: 420px;
-}
-
-/* reversed version */
-.work-vertical-text.reverse .text {
-  left: auto;
-  right: calc(50% + var(--reference-height) / 2 + 40px);
 }
 
 /* RESPONSIVE */
