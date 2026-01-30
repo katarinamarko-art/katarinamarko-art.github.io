@@ -141,6 +141,38 @@ body {
   font-style: italic;
 }
 
+/* SIDE CAPTIONS */
+.work-side-caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;  /* space between media and caption */
+}
+
+.work-side-caption img,
+.work-side-caption video {
+  width: auto;       /* keep original size */
+  max-width: 100%;   /* just in case screen is too small */
+}
+
+.work-side-caption .caption {
+  margin-top: 0;      /* remove default top margin */
+  flex-shrink: 0;     /* keep caption width fixed */
+  width: 200px;       /* adjust width as needed */
+  font-size: 13px;
+}
+
+/* Responsive: on small screens, caption below media */
+@media (max-width: 700px) {
+  .work-side-caption {
+    flex-direction: column;
+  }
+
+  .work-side-caption .caption {
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .split {
