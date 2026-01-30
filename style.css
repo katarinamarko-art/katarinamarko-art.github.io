@@ -30,8 +30,8 @@ body {
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 800; /* strong font-style was invalid */
+  font-size: 22px;
+  font-weight: 800;
   letter-spacing: 0.08em;
   user-select: none;
 }
@@ -42,8 +42,8 @@ body {
   color: black;
   font-size: 13px;
   font-weight: 500;
-  position: relative;          /* needed for pseudo-element */
-  padding-bottom: 4px;        /* space for line */
+  position: relative;
+  padding-bottom: 4px;
   transition: color 0.2s;
 }
 
@@ -61,7 +61,7 @@ body {
 
 .nav a:hover::after,
 .nav a.active::after {
-  width: 100%;   /* line grows across the full link */
+  width: 100%;
 }
 
 /* SPACER FOR FIXED HEADER */
@@ -95,13 +95,13 @@ body {
 /* SPLIT BLOCK (IMAGE + TEXT) */
 .split {
   display: flex;
-  gap: 70px;
+  gap: 40px; /* slightly smaller gap to fit */
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
 .split img {
-  width: 565px;
+  width: 320px;  /* smaller image to fit next to text */
   flex-shrink: 0;
 }
 
@@ -111,7 +111,7 @@ body {
 
 /* TEXT BLOCK */
 .text {
-  width: 565px;
+  width: 320px; /* match split image width */
   max-width: 100%;
 }
 
@@ -145,20 +145,20 @@ body {
 .work-side-caption {
   display: flex;
   align-items: flex-start;
-  gap: 30px;  /* space between media and caption */
+  gap: 30px;
 }
 
 .work-side-caption img,
 .work-side-caption video {
-  width: auto;       /* keep original size */
-  max-width: 100%;   /* just in case screen is too small */
+  width: auto;
+  max-width: 100%;
 }
 
 .work-side-caption .caption {
-  margin-top: 0;      /* remove default top margin */
-  flex-shrink: 0;     /* keep caption width fixed */
-  width: 200px;       /* adjust width as needed */
-  font-size: 10px;
+  margin-top: 0;
+  flex-shrink: 0;
+  width: 200px;
+  font-size: 13px;
 }
 
 /* Responsive: on small screens, caption below media */
@@ -201,3 +201,4 @@ body {
     margin-right: 20px;
   }
 }
+
