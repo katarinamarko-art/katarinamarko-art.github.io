@@ -104,13 +104,17 @@ body {
 }
 
 /* SIDE CAPTION — OUTSIDE FLOW */
-.work-side-caption .media-wrapper {
+.work-side-caption {
   position: relative;
-  display: flex;
-  justify-content: center;
 }
 
-.caption {
+.work-side-caption .media-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.work-side-caption .caption {
   position: absolute;
   left: calc(100% + 40px);
   top: 0;
@@ -148,7 +152,6 @@ body {
   align-items: start;
 }
 
-/* reversed layout */
 .work-vertical-text.reverse {
   grid-template-columns: 1fr var(--reference-height);
 }
@@ -161,18 +164,23 @@ body {
   justify-self: start;
 }
 
-/* reversed image stays aligned */
 .work-vertical-text.reverse img {
   justify-self: end;
 }
 
-/* text */
+/* text column */
 .work-vertical-text .text {
   max-width: 420px;
 }
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
 
+  .works {
+    width: 95%;
+  }
+
+  /* Vertical works stack on mobile */
   .work-vertical-text,
   .work-vertical-text.reverse {
     display: block;
@@ -188,5 +196,10 @@ body {
     max-width: 100%;
   }
 
-}
+  /* Side captions below media on mobile */
+  .work-side-caption .caption {
+    position: static;
+    margin-top: 12px;
+  }
 
+}
