@@ -128,17 +128,16 @@ body {
   font-style: italic;
 }
 
-/* VERTICAL MEDIA — CENTER LOCK */
+/* VERTICAL IMAGE + TEXT — IMAGE CENTERED, TEXT OFFSET */
 .work-vertical-text {
+  position: relative;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  gap: 40px;
 }
 
-/* media wrapper keeps the image on the same vertical axis */
+/* media stays perfectly centered */
 .work-vertical-text .media-wrapper {
-  width: var(--reference-height);
+  position: relative;
   display: flex;
   justify-content: center;
   flex-shrink: 0;
@@ -150,9 +149,18 @@ body {
   object-fit: contain;
 }
 
-/* reverse keeps alignment intact */
-.work-vertical-text.reverse {
-  flex-direction: row-reverse;
+/* text lives to the side, does not affect centering */
+.work-vertical-text .text {
+  position: absolute;
+  top: 0;
+  left: calc(50% + var(--reference-height) / 2 + 40px);
+  max-width: 420px;
+}
+
+/* reversed version */
+.work-vertical-text.reverse .text {
+  left: auto;
+  right: calc(50% + var(--reference-height) / 2 + 40px);
 }
 
 /* RESPONSIVE */
