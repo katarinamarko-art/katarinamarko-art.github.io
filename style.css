@@ -102,7 +102,7 @@ body {
 }
 
 .work-vertical-text img {
-  height: 540px; /* matches horizontal image height (example) */
+  height: 640px; /* matches horizontal image height (example) */
   width: auto;   /* maintain aspect ratio */
   object-fit: cover;
   border-radius: 4px;
