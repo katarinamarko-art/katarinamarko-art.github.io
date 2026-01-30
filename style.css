@@ -171,7 +171,7 @@ body {
 /* text column */
 .work-vertical-text .text {
   max-width: 420px;
-  font-size: 13px;        /* slightly larger */
+  font-size: 16px;        /* slightly larger */
   line-height: 1.6;
   text-align: justify;     /* justify text here, not image */
 }
