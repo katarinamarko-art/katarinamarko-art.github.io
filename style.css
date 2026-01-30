@@ -42,18 +42,26 @@ body {
   color: black;
   font-size: 13px;
   font-weight: 500;
-  transition: color 0.2s, border-bottom 0.2s;
-  padding-bottom: 4px; /* space for line */
-  border-bottom: 2px solid transparent; /* default invisible */
+  position: relative;          /* needed for pseudo-element */
+  padding-bottom: 4px;        /* space for line */
+  transition: color 0.2s;
 }
 
-.nav a:hover,
-.nav a.active {
-  border-bottom: 2px solid black; /* visible line */
+/* Underline for hover and active */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s;
 }
 
-.nav a.active {
-  font-weight: 700;
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;   /* line grows across the full link */
 }
 
 /* SPACER FOR FIXED HEADER */
