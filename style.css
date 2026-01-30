@@ -149,6 +149,15 @@ body {
   text-align: justify;
 }
 
+/* LIMIT HORIZONTAL IMAGE HEIGHT (NO CROPPING) */
+.work-horizontal img,
+.work-horizontal video {
+  width: 100%;
+  height: auto;
+  max-height: var(--reference-height);
+  object-fit: contain;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .work-side-caption,
