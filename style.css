@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+:root {
+  --reference-height: 640px;
+}
+
 body {
   font-family: "Montserrat", Arial, sans-serif;
   background: white;
@@ -19,7 +23,6 @@ body {
   width: 100%;
   background: white;
   z-index: 100;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .header-inner {
@@ -33,7 +36,6 @@ body {
   font-size: 22px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  user-select: none;
 }
 
 .nav a {
@@ -44,7 +46,6 @@ body {
   font-weight: 500;
   position: relative;
   padding-bottom: 4px;
-  transition: color 0.2s;
 }
 
 .nav a::after {
@@ -54,7 +55,7 @@ body {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: black;
+  background: black;
   transition: width 0.3s;
 }
 
@@ -63,73 +64,48 @@ body {
   width: 100%;
 }
 
-/* SPACER */
 .header-spacer {
-  height: 100px;
+  height: 110px;
 }
 
-/* MAIN WORKS COLUMN */
+/* MAIN COLUMN */
 .works {
   width: 1200px;
   max-width: 95%;
-  margin: 0 auto 100px;
-  padding-top: 60px;
+  margin: 0 auto 120px;
 }
 
 .work {
   margin-bottom: 180px;
 }
 
-/* MEDIA (horizontal only) */
-.work:not(.work-vertical-text) img,
-.work:not(.work-vertical-text) video {
+/* HORIZONTAL MEDIA — NEVER CROPPED */
+.work-horizontal img,
+.work-horizontal video {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
-  border-radius: 4px;
+  object-fit: contain;
 }
 
-/* SPLIT BLOCK FOR VERTICAL IMAGES + TEXT */
-.work-vertical-text {
+/* SIDE CAPTION */
+.work-side-caption {
   display: flex;
-  align-items: stretch; /* match heights */
+  align-items: flex-start;
   gap: 30px;
 }
 
-.work-vertical-text.reverse {
-  flex-direction: row-reverse;
-}
-
-.work-vertical-text img {
-  height: 640px; /* matches horizontal image height (example) */
-  width: auto;   /* maintain aspect ratio */
-  object-fit: cover;
-  border-radius: 4px;
+.work-side-caption img,
+.work-side-caption video {
+  height: var(--reference-height);
+  width: auto;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
-.work-vertical-text .text {
-  flex: 1;
-  max-width: 400px;
-}
-
-.text strong {
-  display: block;
-  margin-bottom: 12px;
-  font-weight: 700;
-}
-
-.text p {
-  font-size: 13px;
-  line-height: 1.6;
-  text-align: justify;
-}
-
-/* CAPTIONS (for horizontal works) */
 .caption {
-  margin-top: 12px;
-  font-size: 13px;
+  width: 200px;
+  font-size: 12px;
 }
 
 .caption strong {
@@ -140,126 +116,58 @@ body {
   font-style: italic;
 }
 
-/* SIDE CAPTIONS */
-.work-side-caption {
+/* VERTICAL IMAGE + TEXT */
+.work-vertical-text {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
+  gap: 40px;
 }
 
-.work-side-caption img,
-.work-side-caption video {
-  width: auto;       /* keep original size */
-  max-height: 540px; /* match horizontal media */
+.work-vertical-text.reverse {
+  flex-direction: row-reverse;
+}
+
+.work-vertical-text img {
+  height: var(--reference-height);
+  width: auto;
   object-fit: cover;
   flex-shrink: 0;
 }
 
-.work-side-caption .caption {
-  margin-top: 0;
-  flex-shrink: 0;
-  width: 200px;
-  font-size: 12px;
+.text {
+  max-width: 420px;
 }
 
-/* CONTACT PAGE STYLES */
-.contact-text {
-  max-width: 700px;
-  margin: 0 auto 50px;
-}
-
-.contact-text strong {
+.text strong {
   display: block;
-  font-size: 18px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 
-.contact-form-section {
-  max-width: 600px;
-  margin: 0 auto 50px;
-}
-
-.contact-form label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 6px;
-  margin-top: 12px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  font-family: "Montserrat", Arial, sans-serif;
+.text p {
   font-size: 13px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-.contact-form button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  border: none;
-  background: black;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-
-.contact-form button:hover {
-  background: #333;
-}
-
-.contact-info {
-  max-width: 500px;
-  margin: 0 auto 100px;
-}
-
-.contact-info a {
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
+  text-align: justify;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .split,
-  .work-vertical-text,
-  .work-side-caption {
-    flex-direction: column !important;
+  .work-side-caption,
+  .work-vertical-text {
+    flex-direction: column;
   }
 
-  .split img,
-  .work-vertical-text img {
-    width: 100% !important;
-    height: auto !important;
+  .work-side-caption img,
+  .work-vertical-text img,
+  .work-side-caption video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
-  .text,
-  .work-side-caption .caption {
-    width: 100% !important;
+  .caption,
+  .text {
+    width: 100%;
     max-width: 100%;
   }
 }
 
-@media (max-width: 500px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .nav a {
-    margin-left: 0;
-    margin-right: 20px;
-  }
-}
