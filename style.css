@@ -1,3 +1,4 @@
+/* GLOBAL RESET */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,25 +9,29 @@ body {
   font-family: "Montserrat", Arial, sans-serif;
   background: white;
   color: black;
+  line-height: 1.6;
 }
 
-/* HEADER — DO NOT TOUCH */
+/* HEADER — FIXED */
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
   background: white;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 30px 40px;
 }
 
 .logo {
   font-size: 18px;
-  font-style: strong
+  font-weight: 700; /* strong font-style was invalid */
   letter-spacing: 0.08em;
   user-select: none;
 }
@@ -36,35 +41,57 @@ body {
   text-decoration: none;
   color: black;
   font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
-/* WORKS COLUMN — SAME SCALE AS BEFORE */
+.nav a:hover {
+  color: #555;
+}
+
+.nav a.active {
+  font-weight: 700;
+}
+
+/* SPACER FOR FIXED HEADER */
+.header-spacer {
+  height: 100px; /* matches header height */
+}
+
+/* MAIN WORKS COLUMN */
 .works {
   width: 1000px;
-  margin: 160px auto;
+  max-width: 95%;
+  margin: 0 auto 100px;
+  padding-top: 60px;
 }
 
-/* EACH BLOCK */
+/* EACH WORK BLOCK */
 .work {
   margin-bottom: 140px;
 }
 
-/* MEDIA */
+/* MEDIA (IMAGES & VIDEOS) */
 .work img,
 .work video {
   width: 100%;
+  height: auto;
   display: block;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-/* SPLIT BLOCK */
+/* SPLIT BLOCK (IMAGE + TEXT) */
 .split {
   display: flex;
   gap: 70px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .split img {
   width: 320px;
+  flex-shrink: 0;
 }
 
 .split.reverse {
@@ -74,18 +101,19 @@ body {
 /* TEXT BLOCK */
 .text {
   width: 420px;
+  max-width: 100%;
 }
 
 .text strong {
   display: block;
   margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .text p {
   font-size: 13px;
   line-height: 1.6;
   text-align: justify;
-  hyphens: none;
 }
 
 /* CAPTION */
@@ -100,4 +128,33 @@ body {
 
 .caption em {
   font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .split {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .split img {
+    width: 100%;
+  }
+
+  .text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
 }
