@@ -13,10 +13,10 @@
 
 <body>
 
-<header class="header">
+<header>
   <div class="header-inner">
-    <div class="logo">KATARINA &amp; MARKO</div>
-    <nav class="nav">
+    <div class="name">KATARINA &amp; MARKO</div>
+    <nav>
       <a href="index.html" class="active">WORKS</a>
       <a href="about.html">ABOUT</a>
       <a href="contact.html">CONTACT</a>
@@ -24,86 +24,95 @@
   </div>
 </header>
 
+<div class="header-spacer"></div>
+
 <main class="works">
 
   <!-- 1. VIDEO -->
-  <section class="block wide">
+  <div class="work-row fade-in">
     <video src="videokm1.mp4" autoplay muted loop playsinline></video>
 
-    <div class="citation">
-      <strong>REMAINS</strong><br>
-      <em>2025</em><br>
-      Interactive installation
+    <div class="caption">
+      <div class="title">REMAINS</div>
+      <div class="year">2025</div>
+      <div class="type">Interactive installation</div>
     </div>
-  </section>
+  </div>
 
   <!-- 2. IMAGE + TEXT RIGHT -->
-  <section class="block split">
+  <div class="work-row fade-in">
     <img src="imagekm1.jpg" alt="">
 
-    <div class="text-block">
-      <h2>REMAINS</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.
-      </p>
+    <div class="side-text">
+      <strong>REMAINS</strong><br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
     </div>
-  </section>
+  </div>
 
   <!-- 3. IMAGE -->
-  <section class="block wide">
+  <div class="work-row fade-in">
     <img src="imagekm2.jpg" alt="">
 
-    <div class="citation">
-      <strong>HILO ROJO</strong><br>
-      <em>2024</em><br>
-      Installation
+    <div class="caption">
+      <div class="title">HILO ROJO</div>
+      <div class="year">2024</div>
+      <div class="type">Installation</div>
     </div>
-  </section>
+  </div>
 
-  <!-- 4. IMAGE -->
-  <section class="block wide">
+  <!-- 4. IMAGE ONLY -->
+  <div class="work-row fade-in">
     <img src="imagekm3.jpg" alt="">
-  </section>
+  </div>
 
   <!-- 5. IMAGE + TEXT LEFT -->
-  <section class="block split reverse">
-    <img src="imagekm4.jpg" alt="">
-
-    <div class="text-block">
-      <h2>HILO ROJO</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.
-      </p>
+  <div class="work-row fade-in">
+    <div class="side-text">
+      <strong>HILO ROJO</strong><br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
     </div>
-  </section>
+
+    <img src="imagekm4.jpg" alt="">
+  </div>
 
   <!-- 6. IMAGE -->
-  <section class="block wide">
+  <div class="work-row fade-in">
     <img src="imagekm5.jpg" alt="">
 
-    <div class="citation">
-      <strong>VIEW FROM ABOVE</strong><br>
-      <em>2023</em><br>
-      Interactive installation
+    <div class="caption">
+      <div class="title">VIEW FROM ABOVE</div>
+      <div class="year">2023</div>
+      <div class="type">Interactive installation</div>
     </div>
-  </section>
+  </div>
 
   <!-- 7. IMAGE + TEXT RIGHT -->
-  <section class="block split">
+  <div class="work-row fade-in">
     <img src="imagekm6.jpg" alt="">
 
-    <div class="text-block">
-      <h2>VIEW FROM ABOVE</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.
-      </p>
+    <div class="side-text">
+      <strong>VIEW FROM ABOVE</strong><br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
     </div>
-  </section>
+  </div>
 
 </main>
+
+<script>
+  const items = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  items.forEach(item => observer.observe(item));
+</script>
 
 </body>
 </html>
