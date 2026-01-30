@@ -1,132 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>KATARINA & MARKO — Contact</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katarina & Marko — Works</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
   <div class="header-inner">
-    <div class="name">KATARINA & MARKO</div>
-    <nav>
-      <a href="about.html">ABOUT</a>
-      <a href="index.html" class="active">WORKS</a>
-      <a href="contact.html">CONTACT</a>
+    <div class="logo">KATARINA &amp; MARKO</div>
+    <nav class="nav">
+      <a href="index.html" class="active">Works</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<div class="header-spacer"></div>
-
 <main class="works">
 
   <!-- 1. VIDEO -->
-  <section class="work-block fade-in">
-    <div class="media wide">
-      <video src="videokm1.mp4" autoplay muted loop playsinline></video>
-    </div>
-
+  <section class="work">
+    <video src="videokm1.mp4" autoplay muted loop playsinline></video>
     <div class="caption">
-      <div class="title">REMAINS</div>
-      <div class="year">2025</div>
-      <div class="type">Interactive installation</div>
+      <strong>REMAINS</strong><br>
+      <em>2025</em><br>
+      Interactive installation
     </div>
   </section>
 
   <!-- 2. IMAGE + TEXT RIGHT -->
-  <section class="work-block split fade-in">
-    <div class="media tall">
-      <img src="imagekm1.jpg" alt="">
-    </div>
-
-    <div class="text-block">
-      <h2>REMAINS</h2>
+  <section class="work split">
+    <img src="imagekm1.jpg" alt="">
+    <div class="text">
+      <strong>REMAINS</strong>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </div>
   </section>
 
   <!-- 3. IMAGE -->
-  <section class="work-block fade-in">
-    <div class="media wide">
-      <img src="imagekm2.jpg" alt="">
-    </div>
-
+  <section class="work">
+    <img src="imagekm2.jpg" alt="">
     <div class="caption">
-      <div class="title">HILO ROJO</div>
-      <div class="year">2024</div>
-      <div class="type">Installation</div>
+      <strong>HILO ROJO</strong><br>
+      <em>2024</em><br>
+      Installation
     </div>
   </section>
 
   <!-- 4. IMAGE -->
-  <section class="work-block fade-in">
-    <div class="media wide">
-      <img src="imagekm3.jpg" alt="">
-    </div>
+  <section class="work">
+    <img src="imagekm3.jpg" alt="">
   </section>
 
   <!-- 5. IMAGE + TEXT LEFT -->
-  <section class="work-block split reverse fade-in">
-    <div class="media tall">
-      <img src="imagekm4.jpg" alt="">
-    </div>
-
-    <div class="text-block">
-      <h2>HILO ROJO</h2>
+  <section class="work split reverse">
+    <img src="imagekm4.jpg" alt="">
+    <div class="text">
+      <strong>HILO ROJO</strong>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </div>
   </section>
 
   <!-- 6. IMAGE -->
-  <section class="work-block fade-in">
-    <div class="media wide">
-      <img src="imagekm5.jpg" alt="">
-    </div>
-
+  <section class="work">
+    <img src="imagekm5.jpg" alt="">
     <div class="caption">
-      <div class="title">VIEW FROM ABOVE</div>
-      <div class="year">2023</div>
-      <div class="type">Interactive installation</div>
+      <strong>VIEW FROM ABOVE</strong><br>
+      <em>2023</em><br>
+      Interactive installation
     </div>
   </section>
 
   <!-- 7. IMAGE + TEXT RIGHT -->
-  <section class="work-block split fade-in">
-    <div class="media tall">
-      <img src="imagekm6.jpg" alt="">
-    </div>
-
-    <div class="text-block">
-      <h2>VIEW FROM ABOVE</h2>
+  <section class="work split">
+    <img src="imagekm6.jpg" alt="">
+    <div class="text">
+      <strong>VIEW FROM ABOVE</strong>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </div>
   </section>
 
 </main>
-
-<script>
-  const items = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.15 });
-
-  items.forEach(i => observer.observe(i));
-</script>
 
 </body>
 </html>
