@@ -159,29 +159,22 @@ body {
   max-width: 420px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
 
-  .work:first-of-type {
-    margin-top: 40px;
-  }
-
-  .caption {
-    position: static;
-    width: 100%;
-    margin-top: 16px;
-  }
-
-  .work-vertical-text {
-    flex-direction: column;
+  .work-vertical-text,
+  .work-vertical-text.reverse {
+    display: block;
   }
 
   .work-vertical-text img {
     width: 100%;
     height: auto;
+    margin-bottom: 20px;
   }
 
-  .text {
+  .work-vertical-text .text {
     max-width: 100%;
   }
+
 }
+
