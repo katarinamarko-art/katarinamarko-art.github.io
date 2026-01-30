@@ -128,38 +128,31 @@ body {
   font-style: italic;
 }
 
-/* VERTICAL IMAGE + TEXT */
+/* VERTICAL MEDIA — CENTER LOCK */
 .work-vertical-text {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 40px;
 }
 
-.work-vertical-text.reverse {
-  flex-direction: row-reverse;
+/* media wrapper keeps the image on the same vertical axis */
+.work-vertical-text .media-wrapper {
+  width: var(--reference-height);
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .work-vertical-text img {
   height: var(--reference-height);
   width: auto;
   object-fit: contain;
-  flex-shrink: 0;
 }
 
-.text {
-  max-width: 420px;
-}
-
-.text strong {
-  display: block;
-  margin-bottom: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.text p {
-  font-size: 13px;
-  text-align: justify;
+/* reverse keeps alignment intact */
+.work-vertical-text.reverse {
+  flex-direction: row-reverse;
 }
 
 /* RESPONSIVE */
