@@ -9,10 +9,11 @@
 
 <body>
 
-<header>
+<!-- HEADER -->
+<header class="site-header">
   <div class="header-inner">
-    <div class="name">KATARINA & MARKO</div>
-    <nav>
+    <div class="logo">KATARINA & MARKO</div>
+    <nav class="nav">
       <a href="about.html">ABOUT</a>
       <a href="index.html">WORKS</a>
       <a href="contact.html" class="active">CONTACT</a>
@@ -22,16 +23,42 @@
 
 <div class="header-spacer"></div>
 
-<main>
-  <section class="text-section fade-in">
-    <h2>Contact</h2>
-    <p>
-      Email: katarina.marko@email.com<br>
-      Instagram: @katarinaandmarko
-    </p>
+<!-- MAIN CONTACT CONTENT -->
+<main class="works">
+
+  <section class="work contact-text">
+    <div class="text">
+      <strong>Get in Touch</strong>
+      <p>
+        For collaborations, exhibition inquiries, or any other questions, please contact us using the form below or via email/social media.
+      </p>
+    </div>
   </section>
+
+  <section class="work contact-form-section">
+    <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <section class="work contact-info">
+    <div class="text">
+      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/yourprofile" target="_blank">@yourprofile</a></p>
+      <p>Location: Serbia</p>
+    </div>
+  </section>
+
 </main>
 
-<script src="script.js"></script>
 </body>
 </html>
