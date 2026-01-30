@@ -1,56 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>KATARINA & MARKO — Works</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katarina & Marko — Works</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="name">KATARINA & MARKO</div>
-    <nav>
-      <a href="about.html">ABOUT</a>
-      <a href="index.html" class="active">WORKS</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER (unchanged logic) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">KATARINA &amp; MARKO</div>
+      <nav class="nav">
+        <a href="index.html">Works</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="header-spacer"></div>
+  <main class="works">
 
-<main>
+    <!-- 1. VIDEO + REMAINS CAPTION -->
+    <section class="work-block large fade-in">
+      <video
+        src="videokm1.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
 
-  <section class="works">
-
-    <div class="work-row fade-in">
-      <img src="remains-01.jpg" alt="">
       <div class="caption">
         <div class="title">REMAINS</div>
         <div class="year">2025</div>
         <div class="type">Interactive installation</div>
       </div>
-    </div>
+    </section>
 
-    <div class="work-row fade-in">
-      <img src="remains-02.jpg" alt="">
-    </div>
+    <!-- 2. IMAGE + TEXT RIGHT -->
+    <section class="work-block split fade-in">
+      <img src="imagekm1.jpg" alt="Remains detail" />
 
-    <div class="work-row fade-in">
-      <img src="remains-03.jpg" alt="">
-      <div class="side-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <div class="text-block">
+        <h2>REMAINS</h2>
+        <p>
+          Remains is an interactive installation that explores the relationship between material remnants of
+          the past and the contemporary digital world. The work addresses language as one of humanity's
+          most significant achievements, questioning its emergence, transformation, and potential
+          disappearance.
+          The viewer enters an isolated hybrid space and assumes an active role in
+          directing the process. By reorganizing bricks according to an architectural plan, the participant's actions are tracked by
+          a camera and translated into a digital linguistic message. The viewer thus becomes both
+          constructor tand destroyer, witnessing how material actions generate immaterial meaning. The
+          work reveals language as a shared foundation of civilization, shaped through the ongoing
+          interaction between physical remnants and digital traces.
+        </p>
       </div>
-    </div>
+    </section>
 
-  </section>
+    <!-- 3. IMAGE SAME SIZE AS VIDEO + CAPTION -->
+    <section class="work-block large fade-in">
+      <img src="imagekm2.jpg" alt="Hilo Rojo installation" />
 
-</main>
+      <div class="caption">
+        <div class="title">HILO ROJO</div>
+        <div class="year">2024</div>
+        <div class="type">Installation</div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- 4. IMAGE SAME SIZE, NO CAPTION -->
+    <section class="work-block large fade-in">
+      <img src="imagekm3.jpg" alt="Installation view" />
+    </section>
+
+    <!-- 5. TALL IMAGE RIGHT + TEXT LEFT -->
+    <section class="work-block split reverse fade-in">
+      <img src="imagekm4.jpg" alt="Installation detail" />
+
+      <div class="text-block">
+        <h2>HILO ROJO</h2>
+        <p>
+          Hilo Rojo is an installation that examines the relationship between primitive belief systems and
+          contemporary modes of understanding the world. In modern societies, reality is largely structured
+          through rational , systematic frameworks, often marginalizing the surreal, the spiritual, and the
+          transcendent. This project investigates the possibility of reintroducing these dimensions within a
+          contemporary context.
+          Central to the work is the motif of the red thread, functioning as both a marker of difference and a
+          point of connection. It symbolizes a latent continuity between past and present forms of human
+          experience, suggesting an enduring need for symbolic and ritualistic structures. Through this
+          element, the installation questions the limits of rationalization and proposes the relevance of the
+          irrational and the spiritual in shaping contemporary perceptions of reality.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. IMAGE SAME SIZE + CAPTION -->
+    <section class="work-block large fade-in">
+      <img src="imagekm5.jpg" alt="View From Above installation" />
+
+      <div class="caption">
+        <div class="title">VIEW FROM ABOVE</div>
+        <div class="year">2023</div>
+        <div class="type">Interactive installation</div>
+      </div>
+    </section>
+
+    <!-- 7. IMAGE + TEXT RIGHT -->
+    <section class="work-block split fade-in">
+      <img src="imagekm6.jpg" alt="Installation detail" />
+
+      <div class="text-block">
+        <h2>VIEW FROM ABOVE</h2>
+        <p>
+          The installation View from Above explores individual emotions within a collective experience. The
+          audio-visual environment is shaped by unconscious patterns of behavior and movement,
+          establishing a relationship between the conditioning of the collective and the position of the
+          individual within it.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appear = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    faders.forEach(fader => appear.observe(fader));
+  </script>
+
 </body>
 </html>
